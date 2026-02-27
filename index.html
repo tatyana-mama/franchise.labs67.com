@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Franchise67 — Центр роста концерна · LABS67</title>
+<meta name="description" content="Franchise67 — масштабирование, партнёрство, клиники будущего под ключ. Концерн LABS67.">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e0305;--bg2:#150407;--panel:#1a0508;--b1:rgba(255,255,255,0.07);--b2:rgba(255,255,255,0.14);--red:#ff4d6d;--red2:#ff8099;--red-dim:rgba(255,77,109,0.42);--gold:#e8b840;--cyan:#30dcff;--green:#1df59a;--text:#f5d5da;--muted:rgba(220,170,180,0.42);}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Syne',sans-serif;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;z-index:0;background-image:linear-gradient(rgba(255,77,109,0.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,77,109,0.018) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
+nav{position:fixed;top:0;left:0;right:0;z-index:999;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 44px;background:rgba(14,3,5,0.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--b1);}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.logo-mark{width:32px;height:32px;background:linear-gradient(135deg,var(--red),var(--red2));clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:0.55rem;font-weight:600;color:#0e0305;}
+.logo-text{font-size:1rem;font-weight:800;letter-spacing:0.08em;}
+.logo-text em{color:var(--red);font-style:normal;}
+.logo-parent{font-family:'JetBrains Mono',monospace;font-size:0.44rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--muted);}
+.nav-links{display:flex;}
+.nl{padding:7px 16px;font-family:'JetBrains Mono',monospace;font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;border:1px solid transparent;border-right:1px solid var(--b1);transition:all 0.3s;}
+.nl:first-child{border-left:1px solid var(--b1);border-top:1px solid var(--b1);border-bottom:1px solid var(--b1);}
+.nl:not(:first-child){border-top:1px solid var(--b1);border-bottom:1px solid var(--b1);}
+.nl:hover{color:var(--red);background:rgba(255,77,109,0.04);}
+.nav-r{display:flex;align-items:center;gap:14px;}
+.back-link{padding:7px 18px;border:1px solid var(--b1);color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;}
+.back-link:hover{border-color:var(--red-dim);color:var(--red);}
+.nav-cta{padding:7px 18px;border:1px solid var(--red-dim);color:var(--red);font-family:'JetBrains Mono',monospace;font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;background:transparent;cursor:pointer;transition:all 0.3s;text-decoration:none;}
+.nav-cta:hover{background:rgba(255,77,109,0.07);}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:80px 44px 60px;position:relative;z-index:1;overflow:hidden;}
+.hero-inner{max-width:720px;position:relative;z-index:2;}
+.hero-bg-text{position:absolute;right:-60px;top:50%;transform:translateY(-50%);font-size:22vw;font-weight:800;color:rgba(255,77,109,0.03);line-height:1;pointer-events:none;letter-spacing:-0.05em;}
+.h-eyebrow{display:inline-flex;align-items:center;gap:10px;padding:5px 16px;border:1px solid rgba(255,77,109,0.2);background:rgba(255,77,109,0.04);font-family:'JetBrains Mono',monospace;font-size:0.56rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--red-dim);margin-bottom:36px;animation:fu 0.5s ease both;}
+@keyframes fu{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.hero-title{font-size:clamp(3rem,7vw,6.5rem);font-weight:800;line-height:0.93;letter-spacing:-0.03em;margin-bottom:28px;animation:fu 0.5s ease 0.08s both;}
+.hero-title .ac{color:var(--red);}
+.hero-title em{font-style:italic;-webkit-text-stroke:1px rgba(255,77,109,0.4);-webkit-text-fill-color:transparent;}
+.hero-sub{font-size:1.05rem;font-weight:400;line-height:1.85;color:var(--muted);max-width:540px;margin-bottom:44px;animation:fu 0.5s ease 0.16s both;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;animation:fu 0.5s ease 0.24s both;}
+.btn-red{display:inline-flex;align-items:center;gap:10px;padding:13px 30px;background:linear-gradient(135deg,var(--red),var(--red2));color:#0e0305;font-weight:700;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;border:none;cursor:pointer;transition:all 0.3s;text-decoration:none;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));box-shadow:0 0 28px rgba(255,77,109,0.22);}
+.btn-red:hover{box-shadow:0 0 44px rgba(255,77,109,0.4);transform:translateY(-2px);}
+.btn-out{display:inline-flex;align-items:center;gap:10px;padding:13px 30px;border:1px solid var(--b2);color:var(--muted);font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;background:transparent;cursor:pointer;transition:all 0.3s;text-decoration:none;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));}
+.btn-out:hover{border-color:var(--red-dim);color:var(--red);}
+.hero-stats{display:flex;gap:50px;flex-wrap:wrap;margin-top:70px;padding-top:36px;border-top:1px solid var(--b1);animation:fu 0.5s ease 0.32s both;}
+.hs-n{font-size:2.2rem;font-weight:800;color:var(--red);display:block;line-height:1;}
+.hs-l{font-family:'JetBrains Mono',monospace;font-size:0.52rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);display:block;margin-top:5px;}
+
+.section{padding:100px 44px;position:relative;z-index:1;}
+.sec-tag{font-family:'JetBrains Mono',monospace;font-size:0.56rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:8px;margin-bottom:14px;}
+.sec-tag::before{content:'//';opacity:0.5;}
+.sec-title{font-size:clamp(1.8rem,3.5vw,3rem);font-weight:800;line-height:1.05;letter-spacing:-0.02em;margin-bottom:14px;}
+.sec-title .ac{color:var(--red);}
+.sec-lead{font-size:0.9rem;line-height:1.85;color:var(--muted);max-width:560px;}
+
+/* FORMATS */
+.formats-sec{padding:100px 44px;background:var(--bg2);border-top:1px solid var(--b1);border-bottom:1px solid var(--b1);position:relative;z-index:1;}
+.formats-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--b1);margin-top:60px;}
+.fmt-card{background:var(--panel);padding:52px 44px;position:relative;overflow:hidden;transition:all 0.4s;}
+.fmt-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;transform:scaleX(0);transition:transform 0.4s;}
+.fc-red::before{background:linear-gradient(90deg,var(--red),var(--red2));}
+.fc-gold::before{background:linear-gradient(90deg,var(--gold),#f5cc60);}
+.fmt-card:hover::before{transform:scaleX(1);}
+.fmt-card:hover{background:rgba(255,255,255,0.02);}
+.fmt-badge{display:inline-flex;align-items:center;gap:8px;padding:4px 12px;border:1px solid var(--b1);font-family:'JetBrains Mono',monospace;font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:24px;}
+.fb-red{border-color:rgba(255,77,109,0.25);color:var(--red);}
+.fb-gold{border-color:rgba(232,184,64,0.25);color:var(--gold);}
+.fmt-title{font-size:1.8rem;font-weight:800;margin-bottom:14px;line-height:1.1;}
+.fmt-desc{font-size:0.9rem;line-height:1.85;color:var(--muted);margin-bottom:28px;}
+.fmt-list{}
+.fml-item{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.04);}
+.fml-item:last-child{border-bottom:none;}
+.fml-dot{width:4px;height:4px;border-radius:50%;background:var(--red);margin-top:7px;min-width:4px;}
+.fml-dot-gold{background:var(--gold);}
+.fml-text{font-size:0.85rem;line-height:1.7;color:var(--muted);}
+
+/* WHAT GET */
+.wg-sec{padding:100px 44px;position:relative;z-index:1;}
+.wg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--b1);margin-top:60px;}
+.wg-card{background:var(--bg2);padding:40px 34px;transition:all 0.35s;position:relative;overflow:hidden;}
+.wg-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:2px;background:var(--red);opacity:0;transition:opacity 0.3s;}
+.wg-card:hover::before{opacity:1;}
+.wg-card:hover{background:rgba(255,77,109,0.03);}
+.wc-num{font-family:'JetBrains Mono',monospace;font-size:0.52rem;letter-spacing:0.2em;color:rgba(255,77,109,0.35);margin-bottom:16px;}
+.wc-ico{font-size:1.8rem;margin-bottom:14px;display:block;}
+.wc-title{font-size:1.05rem;font-weight:700;margin-bottom:8px;}
+.wc-desc{font-size:0.84rem;line-height:1.8;color:var(--muted);}
+
+/* MASTER */
+.master-sec{padding:100px 44px;background:var(--bg2);border-top:1px solid var(--b1);border-bottom:1px solid var(--b1);position:relative;z-index:1;}
+.master-box{background:var(--panel);border:1px solid rgba(232,184,64,0.2);padding:60px;max-width:860px;margin:60px auto 0;position:relative;overflow:hidden;box-shadow:0 0 60px rgba(232,184,64,0.04);}
+.mb-corner{position:absolute;top:0;right:0;width:100px;height:100px;background:linear-gradient(135deg,transparent 50%,rgba(232,184,64,0.06) 50%);}
+.mb-label{font-family:'JetBrains Mono',monospace;font-size:0.56rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
+.mb-title{font-size:clamp(1.5rem,3vw,2.5rem);font-weight:800;line-height:1.2;margin-bottom:20px;color:var(--text);}
+.mb-title span{color:var(--gold);}
+.mb-text{font-size:0.92rem;line-height:1.9;color:var(--muted);margin-bottom:36px;max-width:600px;}
+.mb-cta{display:flex;gap:14px;flex-wrap:wrap;}
+
+/* PROCESS */
+.proc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:60px;}
+.pc{padding:36px 28px;border-right:1px solid var(--b1);position:relative;}
+.pc:last-child{border-right:none;}
+.pc-step{font-family:'JetBrains Mono',monospace;font-size:0.52rem;letter-spacing:0.2em;color:var(--red);margin-bottom:16px;}
+.pc-ico{font-size:1.6rem;margin-bottom:12px;display:block;}
+.pc-title{font-size:0.95rem;font-weight:700;margin-bottom:6px;}
+.pc-desc{font-size:0.8rem;line-height:1.75;color:var(--muted);}
+
+/* CONTACT */
+.contact-sec{padding:100px 44px;position:relative;z-index:1;}
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;margin-top:56px;}
+.cinfo{display:flex;align-items:center;gap:14px;padding:15px 16px;background:var(--panel);border:1px solid var(--b1);margin-bottom:8px;transition:all 0.3s;}
+.cinfo:hover{border-color:var(--b2);}
+.ci-icon{width:34px;height:34px;min-width:34px;border:1px solid var(--b1);background:rgba(255,77,109,0.04);display:flex;align-items:center;justify-content:center;font-size:0.88rem;}
+.ci-lbl{font-family:'JetBrains Mono',monospace;font-size:0.46rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:2px;}
+.ci-val{font-size:0.86rem;font-weight:500;color:var(--text);}
+.cform{background:var(--panel);border:1px solid var(--b1);padding:42px 38px;}
+.cf-hdr{display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;margin-bottom:24px;border-bottom:1px solid var(--b1);}
+.cf-t{font-family:'JetBrains Mono',monospace;font-size:0.56rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--red);}
+.cf-id{font-family:'JetBrains Mono',monospace;font-size:0.5rem;color:var(--muted);}
+.fg{margin-bottom:16px;}
+.fl{font-family:'JetBrains Mono',monospace;font-size:0.48rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px;}
+.fi{width:100%;padding:10px 13px;background:rgba(0,0,0,0.3);border:1px solid var(--b1);color:var(--text);font-family:'Syne',sans-serif;font-size:0.86rem;outline:none;transition:all 0.3s;}
+.fi:focus{border-color:var(--red-dim);}
+.fi::placeholder{color:rgba(220,170,180,0.18);}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.fsub{width:100%;padding:13px;margin-top:4px;background:linear-gradient(135deg,var(--red),var(--red2));border:none;color:#0e0305;font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));}
+.fsub:hover{box-shadow:0 0 28px rgba(255,77,109,0.3);transform:translateY(-1px);}
+
+footer{padding:34px 44px;border-top:1px solid var(--b1);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;position:relative;z-index:1;}
+.fl-logo{font-size:0.92rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;}
+.fl-logo em{color:var(--red);font-style:normal;}
+.fl-p{font-family:'JetBrains Mono',monospace;font-size:0.44rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);margin-top:2px;}
+.fc2{font-family:'JetBrains Mono',monospace;font-size:0.48rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-align:center;line-height:1.9;}
+.fr2{font-family:'JetBrains Mono',monospace;font-size:0.46rem;letter-spacing:0.1em;color:var(--muted);text-align:right;line-height:1.9;}
+
+/* CHAT */
+#cb{position:fixed;bottom:26px;right:26px;z-index:9999;}
+.ct{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--red),var(--red2));border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.2rem;box-shadow:0 0 26px rgba(255,77,109,0.4);transition:all 0.3s;}
+.ct:hover{transform:scale(1.1);}
+.cw{position:absolute;bottom:66px;right:0;width:340px;background:var(--panel);border:1px solid rgba(255,77,109,0.2);display:none;flex-direction:column;box-shadow:0 0 50px rgba(0,0,0,0.6);max-height:460px;}
+.cw.open{display:flex;}
+.ch{padding:11px 15px;background:rgba(255,77,109,0.04);border-bottom:1px solid var(--b1);display:flex;align-items:center;justify-content:space-between;}
+.chl{display:flex;align-items:center;gap:9px;}
+.cav{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--red),var(--red2));display:flex;align-items:center;justify-content:center;font-size:0.8rem;}
+.cnm{font-size:0.78rem;font-weight:700;}
+.cst{font-family:'JetBrains Mono',monospace;font-size:0.46rem;color:var(--green);}
+.cx{background:none;border:none;color:var(--muted);cursor:pointer;font-size:0.95rem;}
+.msgs{flex:1;overflow-y:auto;padding:13px;display:flex;flex-direction:column;gap:9px;max-height:280px;}
+.msgs::-webkit-scrollbar{width:2px;}
+.msgs::-webkit-scrollbar-thumb{background:var(--b2);}
+.mb2{max-width:88%;padding:8px 12px;font-size:0.81rem;line-height:1.6;background:rgba(255,255,255,0.04);border:1px solid var(--b1);border-radius:0 7px 7px 7px;align-self:flex-start;}
+.mu{max-width:88%;padding:8px 12px;font-size:0.81rem;line-height:1.6;background:rgba(255,77,109,0.08);border:1px solid rgba(255,77,109,0.15);border-radius:7px 0 7px 7px;align-self:flex-end;color:var(--red2);}
+.ms{font-family:'JetBrains Mono',monospace;font-size:0.46rem;letter-spacing:0.1em;color:var(--red);margin-bottom:3px;display:block;}
+.opts{padding:6px 13px;display:flex;flex-wrap:wrap;gap:5px;}
+.opt{padding:4px 10px;border:1px solid var(--b2);background:transparent;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:0.53rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;}
+.opt:hover{border-color:var(--red-dim);color:var(--red);}
+.inr{padding:9px 11px;border-top:1px solid var(--b1);display:flex;gap:6px;}
+.inp{flex:1;padding:7px 10px;background:rgba(0,0,0,0.3);border:1px solid var(--b1);color:var(--text);font-family:'Syne',sans-serif;font-size:0.78rem;outline:none;transition:border-color 0.3s;}
+.inp:focus{border-color:var(--red-dim);}
+.inp::placeholder{color:var(--muted);font-size:0.74rem;}
+.snd{padding:7px 12px;background:var(--red);border:none;color:#0e0305;font-size:0.76rem;cursor:pointer;font-weight:700;}
+
+@media(max-width:960px){
+  .formats-grid,.contact-grid,.wg-grid{grid-template-columns:1fr;}
+  .proc-grid{grid-template-columns:1fr 1fr;}
+  nav{padding:0 20px;}
+  .nav-links{display:none;}
+  .hero,.section,.formats-sec,.wg-sec,.master-sec,.contact-sec{padding:70px 20px;}
+  footer{grid-template-columns:1fr;text-align:center;padding:28px 20px;}
+  .fr2{text-align:center;}
+  .master-box{padding:40px 28px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="logo-mark">F67</div>
+    <div>
+      <div class="logo-text">Franchise<em>67</em></div>
+      <div class="logo-parent">Концерн LABS67</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#formats" class="nl">Форматы</a>
+    <a href="#wg" class="nl">Что входит</a>
+    <a href="#master" class="nl">Мастер-партнёрство</a>
+    <a href="#contact" class="nl">Обсудить</a>
+  </div>
+  <div class="nav-r">
+    <a href="//labs67.com" class="back-link">← LABS67</a>
+    <a href="#contact" class="nav-cta">Обсудить</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg-text">F67</div>
+  <div class="hero-inner">
+    <div class="h-eyebrow">// Franchise67 · Концерн LABS67</div>
+    <h1 class="hero-title">
+      Центр <span class="ac">роста</span><br>концерна
+    </h1>
+    <p class="hero-sub">Масштабирование, обеспечение, модернизация. Мы создаём клиники будущего под ключ и строим партнёрские сети, которые меняют медицину в регионах.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-red">// Обсудить партнёрство</a>
+      <a href="#formats" class="btn-out">Форматы →</a>
+    </div>
+    <div class="hero-stats">
+      <div><span class="hs-n">3</span><span class="hs-l">Формата</span></div>
+      <div><span class="hs-n">AI</span><span class="hs-l">Под ключ</span></div>
+      <div><span class="hs-n">∞</span><span class="hs-l">Масштаб</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="formats-sec" id="formats">
+  <div class="sec-tag">// Форматы партнёрства</div>
+  <h2 class="sec-title">Три пути <span class="ac">в концерн</span></h2>
+  <div class="formats-grid">
+    <div class="fmt-card fc-red">
+      <div class="fmt-badge fb-red">СТАРТ</div>
+      <div class="fmt-title">Единичная клиника</div>
+      <div class="fmt-desc">Для тех, кто хочет открыть одну клинику под стандартами LABS67. Полная технологическая и методологическая поддержка с первого дня.</div>
+      <div class="fmt-list">
+        <div class="fml-item"><div class="fml-dot"></div><div class="fml-text">AI-система и оборудование под ключ</div></div>
+        <div class="fml-item"><div class="fml-dot"></div><div class="fml-text">Обучение команды в Academi67</div></div>
+        <div class="fml-item"><div class="fml-dot"></div><div class="fml-text">Поддержка на старте и в первый год</div></div>
+        <div class="fml-item"><div class="fml-dot"></div><div class="fml-text">Работа под брендом DentalAI</div></div>
+      </div>
+    </div>
+    <div class="fmt-card fc-gold">
+      <div class="fmt-badge fb-gold">МАСШТАБ</div>
+      <div class="fmt-title">Региональное развитие</div>
+      <div class="fmt-desc">Для тех, кто думает категориями города или региона. Партнёр берёт на себя развитие сети, концерн обеспечивает полную инфраструктуру и эксклюзивность.</div>
+      <div class="fmt-list">
+        <div class="fml-item"><div class="fml-dot fml-dot-gold"></div><div class="fml-text">Эксклюзивные права на территорию</div></div>
+        <div class="fml-item"><div class="fml-dot fml-dot-gold"></div><div class="fml-text">Технологии, стандарты, бренд</div></div>
+        <div class="fml-item"><div class="fml-dot fml-dot-gold"></div><div class="fml-text">Центральное управление сетью</div></div>
+        <div class="fml-item"><div class="fml-dot fml-dot-gold"></div><div class="fml-text">Совместное маркетирование</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wg-sec" id="wg">
+  <div class="sec-tag">// Что входит в пакет</div>
+  <h2 class="sec-title">Полная <span class="ac">инфраструктура</span></h2>
+  <div class="wg-grid">
+    <div class="wg-card">
+      <div class="wc-num">01//</div>
+      <span class="wc-ico">🤖</span>
+      <div class="wc-title">AI-ядро клиники</div>
+      <div class="wc-desc">NVIDIA Jetson, камеры, умный дом, голосовые протоколы. Развёртывание и настройка — силами концерна.</div>
+    </div>
+    <div class="wg-card">
+      <div class="wc-num">02//</div>
+      <span class="wc-ico">🎓</span>
+      <div class="wc-title">Academi67</div>
+      <div class="wc-desc">Обучение и сертификация всей команды. Протоколы, стандарты, работа с AI. Включено в пакет.</div>
+    </div>
+    <div class="wg-card">
+      <div class="wc-num">03//</div>
+      <span class="wc-ico">🏗️</span>
+      <div class="wc-title">Проектирование</div>
+      <div class="wc-desc">Дизайн и оснащение умного пространства. Стоматологии, клиники, аптеки — с нуля до открытия.</div>
+    </div>
+    <div class="wg-card">
+      <div class="wc-num">04//</div>
+      <span class="wc-ico">🔄</span>
+      <div class="wc-title">Обновления и поддержка</div>
+      <div class="wc-desc">AI-модели обновляются централизованно. Техподдержка, модернизация оборудования — без перерывов в работе клиники.</div>
+    </div>
+    <div class="wg-card">
+      <div class="wc-num">05//</div>
+      <span class="wc-ico">📊</span>
+      <div class="wc-title">Аналитика сети</div>
+      <div class="wc-desc">Единая панель управления всеми точками. Показатели, загрузка, качество — в реальном времени.</div>
+    </div>
+    <div class="wg-card">
+      <div class="wc-num">06//</div>
+      <span class="wc-ico">🌐</span>
+      <div class="wc-title">Бренд LABS67</div>
+      <div class="wc-desc">Работа под зонтичным брендом концерна. Маркетинг, стандарты, репутация — всё уже есть.</div>
+    </div>
+  </div>
+</section>
+
+<section class="master-sec" id="master">
+  <div class="sec-tag">// Для амбициозных</div>
+  <h2 class="sec-title">Мастер-<span class="ac">партнёрство</span></h2>
+  <div class="master-box">
+    <div class="mb-corner"></div>
+    <div class="mb-label">// СТРАТЕГИЧЕСКИЙ УРОВЕНЬ</div>
+    <div class="mb-title">Стать частью концерна<br>в <span>своём регионе или стране</span></div>
+    <div class="mb-text">Для тех, кто мыслит масштабом страны или крупного региона — мы открыты к стратегическому партнёрству. Мастер-партнёр получает эксклюзивные права на развитие сети LABS67 на своей территории с обязательствами по количеству точек. Концерн обеспечивает всё: технологии, стандарты, обучение, поддержку. Вы — организацию и рост сети.</div>
+    <div class="mb-cta">
+      <a href="#contact" class="btn-red">// Обсудить конфиденциально</a>
+      <a href="mailto:franchise@labs67.com" class="btn-out">franchise@labs67.com →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="sec-tag">// Как начать</div>
+  <h2 class="sec-title">От заявки до <span class="ac">открытия</span></h2>
+  <div class="proc-grid">
+    <div class="pc"><div class="pc-step">STEP_01</div><span class="pc-ico">✉️</span><div class="pc-title">Заявка</div><div class="pc-desc">Оставляете заявку или пишете напрямую. Рассматриваем в течение 48 часов.</div></div>
+    <div class="pc"><div class="pc-step">STEP_02</div><span class="pc-ico">🤝</span><div class="pc-title">Встреча</div><div class="pc-desc">Обсуждаем формат, территорию, условия. Конфиденциально и без обязательств.</div></div>
+    <div class="pc"><div class="pc-step">STEP_03</div><span class="pc-ico">📋</span><div class="pc-title">Соглашение</div><div class="pc-desc">Фиксируем условия партнёрства. Определяем сроки и план открытия.</div></div>
+    <div class="pc"><div class="pc-step">STEP_04</div><span class="pc-ico">🏗️</span><div class="pc-title">Оснащение</div><div class="pc-desc">Концерн разворачивает AI-систему, проектирует пространство, обучает команду.</div></div>
+    <div class="pc"><div class="pc-step">STEP_05</div><span class="pc-ico">🚀</span><div class="pc-title">Открытие</div><div class="pc-desc">Клиника работает. Концерн обеспечивает поддержку и рост.</div></div>
+  </div>
+</section>
+
+<section class="contact-sec" id="contact">
+  <div class="sec-tag">// Обсудить партнёрство</div>
+  <h2 class="sec-title">Начните <span class="ac">разговор</span></h2>
+  <div class="contact-grid">
+    <div>
+      <p class="sec-lead" style="margin-bottom:24px;">Расскажите о своих планах — мы предложим подходящий формат.</p>
+      <div class="cinfo"><div class="ci-icon">📞</div><div><span class="ci-lbl">Телефон</span><span class="ci-val">+48 571 719 800</span></div></div>
+      <div class="cinfo"><div class="ci-icon">✉️</div><div><span class="ci-lbl">Email</span><span class="ci-val">franchise@labs67.com</span></div></div>
+      <div class="cinfo"><div class="ci-icon">🌐</div><div><span class="ci-lbl">Концерн</span><span class="ci-val">labs67.com</span></div></div>
+    </div>
+    <div class="cform">
+      <div class="cf-hdr"><span class="cf-t">// ЗАПРОС НА ПАРТНЁРСТВО</span><span class="cf-id" id="fid">PRQ_XXXXX</span></div>
+      <div class="fr">
+        <div class="fg"><label class="fl">Имя</label><input type="text" class="fi" placeholder="Ваше имя"></div>
+        <div class="fg"><label class="fl">Телефон</label><input type="tel" class="fi" placeholder="+48 571 719 800"></div>
+      </div>
+      <div class="fg"><label class="fl">Email</label><input type="email" class="fi" placeholder="you@company.com"></div>
+      <div class="fg">
+        <label class="fl">Интересующий формат</label>
+        <select class="fi">
+          <option style="background:#1a0508">— Выберите —</option>
+          <option style="background:#1a0508">Единичная клиника</option>
+          <option style="background:#1a0508">Региональное развитие</option>
+          <option style="background:#1a0508">Мастер-партнёрство</option>
+          <option style="background:#1a0508">Клиника под ключ (не франшиза)</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label class="fl">Регион / страна</label>
+        <input type="text" class="fi" placeholder="Ваш город или страна">
+      </div>
+      <div class="fg"><label class="fl">Расскажите о проекте</label><textarea class="fi" rows="3" placeholder="Планы, сроки, вопросы..."></textarea></div>
+      <button class="fsub" onclick="fSubmit()">// ОТПРАВИТЬ ЗАПРОС →</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="fl-logo">Franchise<em>67</em></div>
+    <div class="fl-p">Концерн LABS67</div>
+  </div>
+  <div class="fc2">© 2025 Franchise67 · LABS67<br><span style="color:var(--green);">● НАБОР ПАРТНЁРОВ ОТКРЫТ</span></div>
+  <div class="fr2">+48 571 719 800<br>franchise@labs67.com</div>
+</footer>
+
+<div id="cb">
+  <div class="cw" id="cwin">
+    <div class="ch"><div class="chl"><div class="cav">🌐</div><div><div class="cnm">Franchise67</div><div class="cst">● Онлайн</div></div></div><button class="cx" onclick="tc()">✕</button></div>
+    <div class="msgs" id="cm"><div class="mb2"><span class="ms">// Franchise67</span>Здравствуйте! Расскажите о ваших планах — я помогу подобрать подходящий формат.</div></div>
+    <div class="opts" id="co">
+      <button class="opt" onclick="sm('форматы')">📋 Форматы</button>
+      <button class="opt" onclick="sm('мастер')">🌍 Мастер-партнёр</button>
+      <button class="opt" onclick="sm('стоимость')">💰 Стоимость</button>
+      <button class="opt" onclick="sm('что входит')">📦 Что входит</button>
+    </div>
+    <div class="inr"><input type="text" class="inp" id="ci" placeholder="Ваш вопрос..." onkeydown="if(event.key==='Enter')sc()"><button class="snd" onclick="sc()">→</button></div>
+  </div>
+  <button class="ct" onclick="tc()">🌐</button>
+</div>
+
+<script>
+document.getElementById('fid').textContent='PRQ_'+Math.random().toString(36).substr(2,6).toUpperCase();
+let o=false;
+function tc(){o=!o;document.getElementById('cwin').classList.toggle('open',o);}
+function am(t,b){const m=document.getElementById('cm');const d=document.createElement('div');d.className=b?'mb2':'mu';if(b)d.innerHTML='<span class="ms">// Franchise67</span>'+t;else d.textContent=t;m.appendChild(d);m.scrollTop=m.scrollHeight;}
+function so(opts){const e=document.getElementById('co');e.innerHTML='';opts.forEach(t=>{const b=document.createElement('button');b.className='opt';b.textContent=t;b.onclick=()=>sm(t);e.appendChild(b);});}
+function sm(t){document.getElementById('co').innerHTML='';am(t,false);setTimeout(()=>{const l=t.toLowerCase();if(l.includes('формат'))am('Три формата: <b>Единичная клиника</b> — старт с одной точкой; <b>Региональное развитие</b> — сеть с эксклюзивом; <b>Мастер-партнёрство</b> — страна или крупный регион.',true),so(['Единичная клиника','Региональное развитие','Мастер-партнёр']);else if(l.includes('мастер')||l.includes('страна'))am('Мастер-партнёрство — для тех, кто думает страной или регионом. Эксклюзив на территорию, поддержка концерна, обязательства по открытию точек. Всё конфиденциально.',true),so(['Обсудить деали','Отправить запрос']);else if(l.includes('стоим')||l.includes('цен'))am('Стоимость зависит от формата и региона. Рассчитываем индивидуально. Напишите: franchise@labs67.com',true),so(['Отправить запрос']);else if(l.includes('входит')||l.includes('включ'))am('В пакет входит: AI-система под ключ, обучение команды (Academi67), проектирование пространства, поддержка и обновления, бренд LABS67.',true),so(['Обсудить','Отправить запрос']);else am('Для обсуждения: franchise@labs67.com · +48 571 719 800. Конфиденциально.',true),so(['Форматы','Мастер-партнёр','Что входит']);},500);}
+function sc(){const i=document.getElementById('ci');const v=i.value.trim();if(!v)return;i.value='';document.getElementById('co').innerHTML='';sm(v);}
+function fSubmit(){const b=document.querySelector('.fsub');b.textContent='// ОБРАБОТКА...';b.style.background='rgba(255,77,109,0.3)';b.style.color='var(--red)';setTimeout(()=>{b.textContent='// ЗАПРОС ПРИНЯТ ✓';b.style.background='var(--green)';b.style.color='#0e0305';document.getElementById('fid').textContent='PRQ_'+Math.random().toString(36).substr(2,6).toUpperCase();setTimeout(()=>{b.textContent='// ОТПРАВИТЬ ЗАПРОС →';b.style.background='';b.style.color='';},3000);},1400);}
+</script>
+</body>
+</html>
