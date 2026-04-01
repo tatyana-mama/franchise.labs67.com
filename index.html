@@ -1,114 +1,163 @@
-<!DOCTYPE html><html lang="ru"><head>
+<!DOCTYPE html><html lang="be"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
-<title>LADZA.AI — Франшиза · LABS67</title>
-<meta name="description" content="LADZA.AI — AI-клиники под ключ. Задайте вопрос — сайт соберётся.">
+<title>SVITA — Канструктар бізнес-канцэпцый · LABS67</title>
+<meta name="description" content="SVITA — платформа для стварэння, упакоўкі і продажу бізнес-канцэпцый заведзенняў. Ад ідэі да запуску.">
+<meta property="og:title" content="SVITA — Канструктар бізнес-канцэпцый">
+<meta property="og:description" content="Платформа для стварэння, упакоўкі і продажу гатовых бізнес-канцэпцый заведзенняў. AI-асістэнт, маркетплейс, аўтаматычная генерацыя дакументацыі.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://franchise.labs67.com">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="apple-touch-icon" href="apple-touch-icon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700;800&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --gold:#BA7517;--gd:#9A6010;--gl:#D4A44A;
-  --bk:#0A0A0F;--wh:#fff;--cr:#F8F9FA;
-  --g1:#E9ECEF;--g2:#DEE2E6;--tx:#1A1A2E;--mu:#6C757D;
+  --bk:#0A0A0F;--bk2:#111118;--bk3:#1A1A24;
+  --wh:#fff;--dim:rgba(255,255,255,0.4);
   --fd:'Sora',sans-serif;--fb:'Inter',sans-serif;--fm:'JetBrains Mono',monospace;
 }
 html{scroll-behavior:smooth}
-body{font-family:var(--fb);background:var(--bk);color:var(--wh);-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}
+body{font-family:var(--fb);background:var(--bk);color:var(--wh);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:rgba(186,117,23,0.3);color:var(--wh)}
+
+/* ═══ NAV ═══ */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 48px;height:48px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,15,0.8);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.04)}
+.nav-logo{font-family:var(--fd);font-size:15px;font-weight:700;letter-spacing:1px;color:var(--wh);display:flex;align-items:center;gap:8px;text-decoration:none}
+.nav-logo svg{width:22px;height:22px}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{font-family:var(--fb);font-size:12px;color:var(--dim);text-decoration:none;transition:color 0.2s;font-weight:400}
+.nav-links a:hover{color:var(--wh)}
+.nav-cta{font-family:var(--fd);font-size:11px;font-weight:500;padding:7px 20px;background:var(--gold);color:var(--bk);border:none;border-radius:20px;cursor:pointer;text-decoration:none;transition:all 0.2s;letter-spacing:0.5px}
+.nav-cta:hover{background:var(--gl);color:var(--bk)}
+
+/* ═══ SECTIONS ═══ */
+section{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;padding:120px 48px}
 
 /* ═══ HERO ═══ */
-#hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;transition:all 0.5s}
-#hero.off{flex:0;min-height:0;overflow:hidden;max-height:0;padding:0;opacity:0}
-.hbg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 30%,rgba(186,117,23,0.05),transparent 70%);pointer-events:none}
-.hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.015) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
-.brand{text-align:center;position:relative;z-index:1;padding:40px 24px}
-.brand-sub{font-family:var(--fm);font-size:10px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:0.6;margin-bottom:12px}
-.brand-name{font-family:var(--fd);font-size:clamp(52px,14vw,130px);font-weight:700;letter-spacing:-2px;line-height:0.9;margin-bottom:10px}
-.brand-mean{font-family:var(--fm);font-size:11px;letter-spacing:3px;color:rgba(255,255,255,0.25);text-transform:uppercase}
-.brand-mean b{color:var(--gold);font-weight:400}
-.brand-line{width:60px;height:2px;background:linear-gradient(90deg,var(--gold),var(--gl));margin:20px auto 16px}
-.brand-desc{font-size:13px;color:rgba(255,255,255,0.35);max-width:380px;margin:0 auto;line-height:1.7;font-weight:300}
+#hero{min-height:100vh;min-height:100dvh;text-align:center;overflow:hidden}
+.hero-over{font-family:var(--fm);font-size:11px;letter-spacing:6px;color:var(--gold);text-transform:uppercase;opacity:0.5;margin-bottom:24px}
+.hero-title{font-family:var(--fd);font-size:clamp(72px,12vw,160px);font-weight:800;letter-spacing:-4px;line-height:0.85;margin-bottom:24px;background:linear-gradient(180deg,var(--wh) 0%,rgba(255,255,255,0.4) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:clamp(18px,2.5vw,28px);font-weight:200;color:var(--dim);max-width:600px;margin:0 auto 40px;line-height:1.5;letter-spacing:-0.3px}
+.hero-sub strong{color:var(--wh);font-weight:400}
+.hero-cta-row{display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap}
+.btn-primary{font-family:var(--fd);font-size:14px;font-weight:500;padding:14px 36px;background:var(--gold);color:var(--bk);border:none;border-radius:28px;cursor:pointer;transition:all 0.3s;letter-spacing:0.3px;text-decoration:none}
+.btn-primary:hover{background:var(--gl);transform:scale(1.03)}
+.btn-ghost{font-family:var(--fd);font-size:14px;font-weight:400;padding:14px 36px;background:transparent;color:var(--dim);border:1px solid rgba(255,255,255,0.12);border-radius:28px;cursor:pointer;transition:all 0.3s;text-decoration:none}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.hero-scroll{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0.3;animation:pulse 2s ease-in-out infinite}
+.hero-scroll span{font-family:var(--fm);font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--dim)}
+.hero-scroll-line{width:1px;height:40px;background:linear-gradient(180deg,var(--gold),transparent)}
+@keyframes pulse{0%,100%{opacity:0.2}50%{opacity:0.5}}
 
-/* ═══ CANVAS — universal response area ═══ */
-#canvas{flex:1;overflow-y:auto;display:none;padding-bottom:90px}
-#canvas.on{display:block}
-#canvas::-webkit-scrollbar{width:3px}
-#canvas::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
+/* ═══ ANNOUNCE ═══ */
+#announce{background:var(--bk2);min-height:auto;padding:80px 48px;text-align:center}
+.ann-label{font-family:var(--fm);font-size:9px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:16px;opacity:0.6}
+.ann-text{font-family:var(--fd);font-size:clamp(28px,4vw,56px);font-weight:700;letter-spacing:-1.5px;line-height:1.15;max-width:900px;margin:0 auto;color:var(--wh)}
+.ann-text em{font-style:normal;color:var(--gold)}
 
-/* FRAME — one response unit (can be anything) */
-.frame{max-width:900px;margin:0 auto;padding:24px 24px 0;animation:frameIn 0.4s ease}
-@keyframes frameIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-.frame+.frame{border-top:1px solid rgba(255,255,255,0.04);margin-top:8px;padding-top:24px}
+/* ═══ FEATURE SECTIONS ═══ */
+.feat{min-height:100vh;text-align:center}
+.feat-label{font-family:var(--fm);font-size:9px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;margin-bottom:20px;opacity:0.5}
+.feat-title{font-family:var(--fd);font-size:clamp(36px,5vw,64px);font-weight:700;letter-spacing:-2px;line-height:1.1;max-width:800px;margin:0 auto 20px}
+.feat-desc{font-size:clamp(16px,2vw,20px);font-weight:300;color:var(--dim);max-width:560px;margin:0 auto 48px;line-height:1.7}
 
-/* FRAME: query echo */
-.frame-q{font-family:var(--fm);font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.15);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}
-.frame-q::before{content:'';width:12px;height:1px;background:var(--gold);opacity:0.4}
+/* ═══ CARDS GRID ═══ */
+.cards{display:grid;gap:2px;max-width:1080px;width:100%}
+.cards-3{grid-template-columns:1fr 1fr 1fr}
+.card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.04);padding:48px 36px;text-align:left;transition:all 0.4s}
+.card:hover{background:rgba(255,255,255,0.04);border-color:rgba(186,117,23,0.12)}
+.card-icon{font-family:var(--fd);font-size:28px;margin-bottom:20px;display:block;color:var(--gold);font-weight:200}
+.card-t{font-family:var(--fd);font-size:20px;font-weight:600;margin-bottom:10px;letter-spacing:-0.3px}
+.card-d{font-size:14px;color:var(--dim);line-height:1.7;font-weight:300}
 
-/* FRAME: agent text */
-.agent-msg{font-size:13px;line-height:1.8;color:rgba(255,255,255,0.55);font-weight:300;max-width:600px;margin-bottom:16px;padding-left:20px;border-left:2px solid rgba(186,117,23,0.2)}
-.agent-msg strong{color:var(--gold);font-weight:500}
-.agent-msg em{color:rgba(255,255,255,0.7);font-style:normal}
+/* ═══ WHAT YOU GET ═══ */
+.pkg-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;max-width:1080px;width:100%}
+.pkg-item{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.04);padding:36px 32px;text-align:left;transition:all 0.4s}
+.pkg-item:hover{background:rgba(255,255,255,0.04);border-color:rgba(186,117,23,0.12)}
+.pkg-icon{font-size:24px;margin-bottom:14px;display:block}
+.pkg-t{font-family:var(--fd);font-size:16px;font-weight:600;margin-bottom:8px;letter-spacing:-0.2px}
+.pkg-d{font-size:13px;color:var(--dim);line-height:1.7;font-weight:300}
 
-/* FRAME: block grid */
-.grid{display:grid;gap:1px}
-.g1{grid-template-columns:1fr}
-.g2{grid-template-columns:1fr 1fr}
-.g3{grid-template-columns:1fr 1fr 1fr}
+/* ═══ SURF HORIZONTAL SCROLL ═══ */
+.surf-wrap{width:100%;overflow:hidden;position:relative}
+.surf-track{display:flex;gap:20px;padding:0 48px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;cursor:grab}
+.surf-track::-webkit-scrollbar{display:none}
+.surf-track:active{cursor:grabbing}
+.surf-card{flex:0 0 320px;scroll-snap-align:start;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.04);padding:40px 32px;transition:all 0.4s;position:relative}
+.surf-card:hover{background:rgba(255,255,255,0.05);border-color:rgba(186,117,23,0.15)}
+.surf-tag{font-family:var(--fm);font-size:8px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:12px;opacity:0.6}
+.surf-name{font-family:var(--fd);font-size:18px;font-weight:600;margin-bottom:8px}
+.surf-desc{font-size:13px;color:var(--dim);line-height:1.7;font-weight:300;margin-bottom:16px}
+.surf-stat{font-family:var(--fm);font-size:10px;color:rgba(255,255,255,0.2);letter-spacing:1px}
+.surf-hint{font-family:var(--fm);font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.12);text-transform:uppercase;text-align:center;margin-top:20px}
 
-/* CARD */
-.card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05);padding:24px 22px;transition:all 0.3s}
-.card:hover{background:rgba(255,255,255,0.05);border-color:rgba(186,117,23,0.15)}
-.card-badge{font-family:var(--fm);font-size:8px;letter-spacing:2px;padding:3px 8px;background:rgba(186,117,23,0.12);color:var(--gold);display:inline-block;margin-bottom:10px;text-transform:uppercase}
-.card-title{font-family:var(--fd);font-size:16px;font-weight:600;color:var(--wh);margin-bottom:6px;letter-spacing:-0.3px}
-.card-text{font-size:11px;line-height:1.7;color:rgba(255,255,255,0.35);font-weight:300;margin-bottom:12px}
-.card-list{list-style:none;display:flex;flex-direction:column;gap:4px}
-.card-list li{font-size:10px;color:rgba(255,255,255,0.45);display:flex;align-items:flex-start;gap:8px;line-height:1.5}
-.card-list li::before{content:'';width:4px;height:4px;background:var(--gold);flex-shrink:0;margin-top:5px;border-radius:1px}
-.card-price{font-family:var(--fd);font-size:24px;font-weight:700;color:var(--gold);margin-bottom:2px}
-.card-price-sub{font-size:10px;color:rgba(255,255,255,0.25);margin-bottom:4px;font-weight:300}
-.card-royalty{font-family:var(--fm);font-size:10px;color:var(--gold);opacity:0.7;margin-bottom:8px}
-.card-step{display:flex;gap:10px;margin-bottom:12px}
-.card-step:last-child{margin-bottom:0}
-.card-step-n{font-family:var(--fm);font-size:10px;color:var(--gold);width:20px;height:20px;border:1px solid rgba(186,117,23,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.card-step-t{font-family:var(--fd);font-size:12px;font-weight:600;color:var(--wh);margin-bottom:1px}
-.card-step-d{font-size:10px;color:rgba(255,255,255,0.3);line-height:1.5}
-.card-faq-q{font-family:var(--fd);font-size:12px;font-weight:600;color:var(--wh);margin-bottom:3px}
-.card-faq-a{font-size:10px;color:rgba(255,255,255,0.3);line-height:1.6;margin-bottom:10px}
-.card-faq-a:last-child{margin-bottom:0}
-.card-contact{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
-.card-contact:last-child{border:none}
-.card-contact span{font-size:14px}
-.card-contact a{color:var(--wh);text-decoration:none;font-size:12px;transition:color 0.2s}
-.card-contact a:hover{color:var(--gold)}
+/* ═══ STEPS ═══ */
+.steps{display:flex;gap:0;max-width:1080px;width:100%;position:relative}
+.steps::before{content:'';position:absolute;top:28px;left:0;right:0;height:1px;background:rgba(186,117,23,0.15)}
+.step{flex:1;text-align:center;position:relative;padding:0 20px}
+.step-num{font-family:var(--fm);font-size:11px;width:56px;height:56px;border:1px solid rgba(186,117,23,0.3);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;background:var(--bk);color:var(--gold);position:relative;z-index:1;border-radius:50%;transition:all 0.3s}
+.step:hover .step-num{background:var(--gold);color:var(--bk);border-color:var(--gold)}
+.step-t{font-family:var(--fd);font-size:16px;font-weight:600;margin-bottom:8px}
+.step-d{font-size:12px;color:var(--dim);line-height:1.7;font-weight:300}
 
-/* ═══ CHAT BAR (sticky bottom) ═══ */
-#bar{position:sticky;bottom:0;z-index:50;background:rgba(10,10,15,0.95);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid rgba(186,117,23,0.08);padding:12px 24px 16px}
-#bar.hero-mode{position:relative;background:transparent;border:none;backdrop-filter:none;max-width:640px;width:100%;margin:0 auto;padding:24px}
-.chat-label{font-family:var(--fm);font-size:8px;letter-spacing:3px;color:rgba(255,255,255,0.15);text-transform:uppercase;margin-bottom:6px}
-#bar:not(.hero-mode) .chat-label{display:none}
-.chat-row{display:flex;border:1px solid rgba(255,255,255,0.08);transition:border-color 0.3s;max-width:700px;margin:0 auto}
-.chat-row:focus-within{border-color:var(--gold)}
-.chat-in{flex:1;background:transparent;border:none;outline:none;color:var(--wh);font-family:var(--fb);font-size:14px;font-weight:300;padding:12px 18px}
-.chat-in::placeholder{color:rgba(255,255,255,0.12)}
-.chat-go{width:44px;background:var(--gold);border:none;cursor:pointer;color:var(--bk);font-size:16px;transition:background 0.2s;flex-shrink:0}
-.chat-go:hover{background:var(--gl)}
-.sugs{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px;max-width:700px;margin-left:auto;margin-right:auto;justify-content:center}
-.sg{font-family:var(--fm);font-size:8px;letter-spacing:1px;padding:5px 10px;border:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.2);background:transparent;cursor:pointer;transition:all 0.15s;text-transform:uppercase}
-.sg:hover{border-color:var(--gold);color:var(--gold)}
+/* ═══ FOR WHOM ═══ */
+.audience{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;max-width:1080px;width:100%}
+.aud-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.04);padding:48px 32px;text-align:left;transition:all 0.4s}
+.aud-card:hover{background:rgba(255,255,255,0.04);border-color:rgba(186,117,23,0.12)}
+.aud-icon{font-size:32px;margin-bottom:16px;display:block}
+.aud-t{font-family:var(--fd);font-size:18px;font-weight:600;margin-bottom:10px}
+.aud-d{font-size:13px;color:var(--dim);line-height:1.7;font-weight:300}
+.aud-list{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:6px}
+.aud-list li{font-size:12px;color:rgba(255,255,255,0.5);display:flex;align-items:center;gap:8px;font-weight:300}
+.aud-list li::before{content:'';width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0}
 
-/* ═══ SHARE ═══ */
-.share-row{display:none;align-items:center;justify-content:center;gap:12px;max-width:700px;margin:6px auto 0}
-.share-row.on{display:flex}
-.share-row span{font-family:var(--fm);font-size:8px;color:rgba(255,255,255,0.2);letter-spacing:1px;text-transform:uppercase}
-.share-row button{font-family:var(--fm);font-size:8px;letter-spacing:1px;padding:4px 12px;background:rgba(186,117,23,0.2);color:var(--gold);border:1px solid rgba(186,117,23,0.2);cursor:pointer;text-transform:uppercase;transition:all 0.2s}
-.share-row button:hover{background:var(--gold);color:var(--bk)}
+/* ═══ PRICING ═══ */
+.pricing{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;max-width:1080px;width:100%}
+.price-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.04);padding:48px 32px;text-align:center;transition:all 0.4s}
+.price-card.featured{background:rgba(186,117,23,0.04);border-color:rgba(186,117,23,0.2)}
+.price-badge{font-family:var(--fm);font-size:8px;letter-spacing:3px;padding:4px 12px;background:rgba(186,117,23,0.15);color:var(--gold);display:inline-block;margin-bottom:16px;text-transform:uppercase;border-radius:10px}
+.price-name{font-family:var(--fd);font-size:22px;font-weight:700;margin-bottom:6px}
+.price-desc{font-size:12px;color:var(--dim);margin-bottom:24px;font-weight:300}
+.price-val{font-family:var(--fd);font-size:42px;font-weight:800;color:var(--gold);margin-bottom:4px;letter-spacing:-1px}
+.price-period{font-size:11px;color:var(--dim);margin-bottom:24px;font-weight:300}
+.price-list{list-style:none;text-align:left;display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+.price-list li{font-size:13px;color:rgba(255,255,255,0.5);display:flex;align-items:center;gap:10px;font-weight:300}
+.price-list li::before{content:'';width:5px;height:5px;background:var(--gold);border-radius:50%;flex-shrink:0}
+.price-btn{font-family:var(--fd);font-size:13px;font-weight:500;padding:12px 32px;border-radius:24px;cursor:pointer;transition:all 0.3s;display:inline-block;text-decoration:none}
+.price-btn-fill{background:var(--gold);color:var(--bk);border:none}
+.price-btn-fill:hover{background:var(--gl)}
+.price-btn-line{background:transparent;color:var(--dim);border:1px solid rgba(255,255,255,0.1)}
+.price-btn-line:hover{border-color:var(--gold);color:var(--gold)}
 
-/* ═══ THINKING DOTS ═══ */
-.thinking{display:flex;gap:4px;padding:8px 0 8px 20px}
-.thinking span{width:6px;height:6px;background:var(--gold);border-radius:50%;opacity:0.3;animation:dot 1s ease-in-out infinite}
-.thinking span:nth-child(2){animation-delay:0.15s}
-.thinking span:nth-child(3){animation-delay:0.3s}
-@keyframes dot{0%,100%{opacity:0.2;transform:scale(0.8)}50%{opacity:0.8;transform:scale(1.1)}}
+/* ═══ FAQ ═══ */
+.faq{max-width:720px;width:100%;text-align:left}
+.faq-item{border-bottom:1px solid rgba(255,255,255,0.04);padding:24px 0}
+.faq-q{font-family:var(--fd);font-size:16px;font-weight:500;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color 0.2s}
+.faq-q:hover{color:var(--gold)}
+.faq-q::after{content:'+';font-family:var(--fm);font-size:18px;color:var(--gold);transition:transform 0.3s;flex-shrink:0}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{font-size:14px;color:var(--dim);line-height:1.7;font-weight:300;max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.4s ease}
+.faq-item.open .faq-a{max-height:300px;padding-top:14px}
+
+/* ═══ CTA ═══ */
+#cta{background:var(--bk2);text-align:center}
+.cta-title{font-family:var(--fd);font-size:clamp(36px,5vw,64px);font-weight:700;letter-spacing:-2px;margin-bottom:16px}
+.cta-desc{font-size:18px;font-weight:300;color:var(--dim);max-width:500px;margin:0 auto 40px;line-height:1.6}
+
+/* ═══ FOOTER ═══ */
+footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.04);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.foot-left{font-family:var(--fm);font-size:10px;color:rgba(255,255,255,0.15);letter-spacing:1px}
+.foot-links{display:flex;gap:24px}
+.foot-links a{font-size:11px;color:rgba(255,255,255,0.2);text-decoration:none;transition:color 0.2s}
+.foot-links a:hover{color:var(--gold)}
+
+/* ═══ SCROLL REVEAL ═══ */
+.sr{opacity:0;transform:translateY(40px);transition:opacity 0.8s ease,transform 0.8s ease}
+.sr.vis{opacity:1;transform:translateY(0)}
+.sr-d1{transition-delay:0.1s}.sr-d2{transition-delay:0.2s}.sr-d3{transition-delay:0.3s}
 
 /* ═══ PULSE NAV ═══ */
 .pulse-nav{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:200;display:flex;flex-direction:column;align-items:flex-end;gap:0;padding:12px 8px;transition:all .3s}
@@ -127,362 +176,419 @@ body{font-family:var(--fb);background:var(--bk);color:var(--wh);-webkit-font-smo
 .pulse-nav:hover .pn-action{opacity:1}
 .pn-action:hover{border-color:var(--gold);color:var(--gold)}
 
-@media(max-width:700px){
-  .g2,.g3{grid-template-columns:1fr}
-  .brand-name{font-size:52px}
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:900px){
+  nav{padding:0 24px}
+  .nav-links a:not(.nav-cta){display:none}
+  section{padding:100px 24px}
+  #announce{padding:60px 24px}
+  .cards-3{grid-template-columns:1fr}
+  .pkg-grid{grid-template-columns:1fr}
+  .audience{grid-template-columns:1fr}
+  .pricing{grid-template-columns:1fr}
+  .steps{flex-direction:column;gap:32px}
+  .steps::before{display:none}
+  .surf-card{flex:0 0 280px}
+  .surf-track{padding:0 24px}
+  .hero-title{letter-spacing:-2px}
+  footer{flex-direction:column;text-align:center}
   .pulse-nav{display:none}
+}
+@media(max-width:500px){
+  .hero-cta-row{flex-direction:column}
+  .btn-primary,.btn-ghost{width:100%;text-align:center}
 }
 </style></head><body>
 
-<div id="hero">
-  <div class="hbg"></div>
-  <div class="hgrid"></div>
-  <div class="brand">
-    <div class="brand-sub" data-t="brand_sub">канцэрн labs67</div>
-    <div class="brand-name">LADZA</div>
-    <div class="brand-mean"><b>L</b>abs <b>A</b>I <b>D</b>ental <b>Z</b>one — <b>A</b>utomated</div>
-    <div class="brand-line"></div>
-    <div class="brand-desc" data-t="brand_desc">Франшиза AI-клиник. Задайте вопрос — сайт соберётся под вас.</div>
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">
+    <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="22" height="22" rx="4" fill="#BA7517"/>
+      <text x="11" y="15" font-family="Sora,sans-serif" font-weight="700" font-size="8" fill="#0A0A0F" text-anchor="middle">SV</text>
+    </svg>
+    SVITA<span>.</span>
+  </a>
+  <div class="nav-links">
+    <a href="#concept" data-t="nav_concept">Канцэпцыя</a>
+    <a href="#package" data-t="nav_package">Пакет</a>
+    <a href="#surf" data-t="nav_showcase">Агляд</a>
+    <a href="#how" data-t="nav_how">Працэс</a>
+    <a href="#pricing" data-t="nav_pricing">Кошт</a>
+    <a href="#cta" class="nav-cta" data-t="nav_start">Пачаць</a>
   </div>
-  <div class="lang-switcher" style="position:absolute;top:16px;right:16px;z-index:100"></div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-over" data-t="hero_over">labs67 platform</div>
+  <div class="hero-title">SVITA</div>
+  <div class="hero-sub" data-t="hero_sub">Канструктар бізнес-канцэпцый заведзенняў.<br><strong data-t="hero_sub_strong">Створы. Упакуй. Прадай. Запусці.</strong></div>
+  <div class="hero-cta-row">
+    <a href="#cta" class="btn-primary" data-t="hero_cta">Стварыць канцэпцыю</a>
+    <a href="#concept" class="btn-ghost" data-t="hero_more">Даведацца больш</a>
+  </div>
+  <div class="hero-scroll">
+    <span>scroll</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- ANNOUNCE -->
+<div id="announce">
+  <div class="ann-label" data-t="ann_label">новая эра</div>
+  <div class="ann-text" data-t="ann_text">Кожны можа стварыць <em data-t="ann_em">свой фармат</em> заведзення і прадаць яго як гатовы бізнес-пакет</div>
 </div>
 
-<div id="canvas"></div>
+<!-- CONCEPT — What is SVITA -->
+<section id="concept" class="feat">
+  <div class="feat-label" data-t="concept_label">канцэпцыя</div>
+  <div class="feat-title sr" data-t="concept_title">Не франшыза.<br>Канструктар бізнесаў.</div>
+  <div class="feat-desc sr sr-d1" data-t="concept_desc">SVITA — платформа, дзе вы збіраеце поўную канцэпцыю заведзення з нуля: меню, дызайн, працэсы, брэндынг, фінансы — і прадаеце яе як гатовы пакет для запуску бізнесу.</div>
+  <div class="cards cards-3 sr sr-d2">
+    <div class="card">
+      <span class="card-icon">01</span>
+      <div class="card-t" data-t="concept_c1_t">Стварыць</div>
+      <div class="card-d" data-t="concept_c1_d">Збярыце канцэпцыю з нуля: назва, лога, меню, інтэр'ер, тэхналагічныя карты, стандарты абслугоўвання, пастаўшчыкі. Усё ў адным месцы з AI-асістэнтам.</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">02</span>
+      <div class="card-t" data-t="concept_c2_t">Упакаваць</div>
+      <div class="card-d" data-t="concept_c2_d">Платформа аўтаматычна генеруе брэнд-бук, бізнес-план з фінансавымі мадэлямі, тэхналагічныя карты, інструкцыі для персанала і камерцыйную прапанову.</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">03</span>
+      <div class="card-t" data-t="concept_c3_t">Прадаць</div>
+      <div class="card-d" data-t="concept_c3_d">Апублікуйце канцэпцыю на маркетплейсе SVITA. Пакупнікі атрымліваюць усё для запуску пад ключ: ад лагатыпа да плана рэнтабельнасці.</div>
+    </div>
+  </div>
+</section>
 
-<div id="bar" class="hero-mode">
-  <div class="chat-label" data-t="chat_label">задай вопрос — сайт появится</div>
-  <div class="chat-row">
-    <input class="chat-in" id="qi" type="text" placeholder="Хочу узнать про франшизу..." autofocus>
-    <button class="chat-go" id="qgo">&#8594;</button>
+<!-- PACKAGE — What's included -->
+<section id="package" class="feat" style="background:var(--bk2)">
+  <div class="feat-label" data-t="pkg_label">што ўваходзіць</div>
+  <div class="feat-title sr" data-t="pkg_title">Поўны пакет<br>для запуску бізнесу.</div>
+  <div class="feat-desc sr sr-d1" data-t="pkg_desc">Кожная канцэпцыя на SVITA — гэта гатовы набор дакументаў і матэрыялаў, які дазваляе адкрыць заведзенне без досведу ў індустрыі.</div>
+  <div class="pkg-grid sr sr-d2">
+    <div class="pkg-item">
+      <span class="pkg-icon">📋</span>
+      <div class="pkg-t" data-t="pkg_i1_t">Бізнес-план</div>
+      <div class="pkg-d" data-t="pkg_i1_d">Фінансавая мадэль, прагноз даходаў і расходаў, пункт бясстратнасці, ROI. Гатовы для банка або інвестара.</div>
+    </div>
+    <div class="pkg-item">
+      <span class="pkg-icon">🎨</span>
+      <div class="pkg-t" data-t="pkg_i2_t">Брэнд-бук</div>
+      <div class="pkg-d" data-t="pkg_i2_d">Лагатып, каляровая палітра, тыпаграфіка, стыль фота, шаблоны для сацсетак, макеты вывескі і меню.</div>
+    </div>
+    <div class="pkg-item">
+      <span class="pkg-icon">🍽</span>
+      <div class="pkg-t" data-t="pkg_i3_t">Меню і тэхкарты</div>
+      <div class="pkg-d" data-t="pkg_i3_d">Поўнае меню з рэцэптурамі, тэхналагічнымі картамі, разлікам сабекошту і рэкамендацыямі па пастаўшчыках.</div>
+    </div>
+    <div class="pkg-item">
+      <span class="pkg-icon">📐</span>
+      <div class="pkg-t" data-t="pkg_i4_t">Дызайн-праект</div>
+      <div class="pkg-d" data-t="pkg_i4_d">Канцэпцыя інтэр'еру, планіроўка, спецыфікацыя матэрыялаў, мудборд. Для перадачы архітэктару.</div>
+    </div>
+    <div class="pkg-item">
+      <span class="pkg-icon">📖</span>
+      <div class="pkg-t" data-t="pkg_i5_t">Аперацыйныя стандарты</div>
+      <div class="pkg-d" data-t="pkg_i5_d">Інструкцыі для персанала, чэк-лісты адкрыцця/закрыцця, стандарты абслугоўвання, шаблоны графікаў.</div>
+    </div>
+    <div class="pkg-item">
+      <span class="pkg-icon">📊</span>
+      <div class="pkg-t" data-t="pkg_i6_t">Маркетынг-план</div>
+      <div class="pkg-d" data-t="pkg_i6_d">Стратэгія прасоўвання, кантэнт-план для сацсетак, шаблоны рэкламных кампаній, лакальны маркетынг.</div>
+    </div>
   </div>
-  <div class="sugs" id="sugs">
-    <button class="sg" data-q="расскажи про форматы франшизы">форматы</button>
-    <button class="sg" data-q="сколько стоит франшиза">цены</button>
-    <button class="sg" data-q="условия контракта">условия</button>
-    <button class="sg" data-q="какие технологии AI">технологии</button>
-    <button class="sg" data-q="как начать открытие клиники">процесс</button>
-    <button class="sg" data-q="частые вопросы">faq</button>
-    <button class="sg" data-q="контакты">контакты</button>
-    <button class="sg" data-q="оборудование клиники">оборудование</button>
-  </div>
-  <div class="share-row" id="share">
-    <span id="sc"></span>
-    <button onclick="doShare()">скопировать ссылку</button>
-  </div>
-</div>
+</section>
 
+<!-- SURF — horizontal scrollable showcase -->
+<section id="surf" class="feat">
+  <div class="feat-label" data-t="surf_label">маркетплейс канцэпцый</div>
+  <div class="feat-title sr" data-t="surf_title">Любое заведзенне.<br>Любы фармат.</div>
+  <div class="feat-desc sr sr-d1" data-t="surf_desc">Серфіце па гатовых канцэпцыях — ад кавярні да стаматалогіі. Кожная ўключае поўны пакет для запуску пад ключ.</div>
+  <div class="surf-wrap sr sr-d2">
+    <div class="surf-track" id="surfTrack">
+      <div class="surf-card">
+        <div class="surf-tag" data-t="surf_c1_tag">кава</div>
+        <div class="surf-name" data-t="surf_c1_name">Craft Coffee Lab</div>
+        <div class="surf-desc" data-t="surf_c1_desc">Спецыялізаваная кавярня 3-й хвалі з уласнай абсмажкай і мінімалістычным дызайнам. 40 м², 2 работнікі, нізкі парог уваходу.</div>
+        <div class="surf-stat" data-t="surf_c1_stat">Запуск ад $18K · ROI 14 мес.</div>
+      </div>
+      <div class="surf-card">
+        <div class="surf-tag" data-t="surf_c2_tag">фаст-фуд</div>
+        <div class="surf-name" data-t="surf_c2_name">Street Bowl</div>
+        <div class="surf-desc" data-t="surf_c2_desc">Боўлы, ролы, смузі. Кампактны фармат для фуд-кортаў і стрыт-фуду. Хуткая акупнасць і масштабаванне.</div>
+        <div class="surf-stat" data-t="surf_c2_stat">Запуск ад $12K · ROI 10 мес.</div>
+      </div>
+      <div class="surf-card">
+        <div class="surf-tag" data-t="surf_c3_tag">рэстаран</div>
+        <div class="surf-name" data-t="surf_c3_name">Nordic Table</div>
+        <div class="surf-desc" data-t="surf_c3_desc">Поўнафарматны рэстаран скандынаўскай кухні. Сезоннае меню, лакальныя пастаўшчыкі, 80 месцаў, прэміяльнае пазіцыянаванне.</div>
+        <div class="surf-stat" data-t="surf_c3_stat">Запуск ад $95K · ROI 24 мес.</div>
+      </div>
+      <div class="surf-card">
+        <div class="surf-tag" data-t="surf_c4_tag">б'юці</div>
+        <div class="surf-name" data-t="surf_c4_name">BRUT Barbershop</div>
+        <div class="surf-desc" data-t="surf_c4_desc">Мужчынскі барбершоп у індустрыяльным стылі. 3 крэслы, бар, музыка. Поўны брэнд-бук і абсталяванне-ліст.</div>
+        <div class="surf-stat" data-t="surf_c4_stat">Запуск ад $22K · ROI 12 мес.</div>
+      </div>
+      <div class="surf-card">
+        <div class="surf-tag" data-t="surf_c5_tag">стрыт-фуд</div>
+        <div class="surf-name" data-t="surf_c5_name">Pita &amp; Za'atar</div>
+        <div class="surf-desc" data-t="surf_c5_desc">Ізраільскі стрыт-фуд: піта, хумус, фалафель. Адкрытая кухня, хуткае абслугоўванне, яркі брэндынг.</div>
+        <div class="surf-stat" data-t="surf_c5_stat">Запуск ад $15K · ROI 11 мес.</div>
+      </div>
+      <div class="surf-card">
+        <div class="surf-tag" data-t="surf_c6_tag">медыцына</div>
+        <div class="surf-name" data-t="surf_c6_name">Svyatlitsa Dental</div>
+        <div class="surf-desc" data-t="surf_c6_desc">AI-стаматалогія з разумнай дыягностыкай SCYRA.AI. Аўтаматызацыя працэсаў, камфортнае асяроддзе, прэміяльны сэрвіс.</div>
+        <div class="surf-stat" data-t="surf_c6_stat">Запуск ад $180K · ROI 30 мес.</div>
+      </div>
+      <div class="surf-card">
+        <div class="surf-tag" data-t="surf_c7_tag">фітнес</div>
+        <div class="surf-name" data-t="surf_c7_name">Box Studio</div>
+        <div class="surf-desc" data-t="surf_c7_desc">Кампактная студыя бокса і функцыянальнага трэнінгу. 120 м², падпісная мадэль, мабільны дадатак для кліентаў.</div>
+        <div class="surf-stat" data-t="surf_c7_stat">Запуск ад $35K · ROI 16 мес.</div>
+      </div>
+    </div>
+    <div class="surf-hint" data-t="surf_hint">← серфіце →</div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="feat" style="background:var(--bk2)">
+  <div class="feat-label" data-t="how_label">як гэта працуе</div>
+  <div class="feat-title sr" data-t="how_title">Чатыры крокі<br>да гатовага бізнесу.</div>
+  <div class="feat-desc sr sr-d1" data-t="how_desc">Ад ідэі да камерцыйнай прапановы — усё на адной платформе з падтрымкай AI.</div>
+  <div class="steps sr sr-d2">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-t" data-t="how_s1_t">Ідэя</div>
+      <div class="step-d" data-t="how_s1_d">Апішыце задуму: тып заведзення, мэтавая аўдыторыя, лакацыя, бюджэт, канкурэнтныя перавагі</div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-t" data-t="how_s2_t">Зборка</div>
+      <div class="step-d" data-t="how_s2_d">AI-асістэнт дапаможа сабраць меню, дызайн, працэсы, маркетынг і разлічыць эканоміку</div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-t" data-t="how_s3_t">Упакоўка</div>
+      <div class="step-d" data-t="how_s3_d">Аўтаматычная генерацыя брэнд-бука, бізнес-плана, тэхкарт і прэзентацыі для інвестара</div>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-t" data-t="how_s4_t">Запуск</div>
+      <div class="step-d" data-t="how_s4_d">Публікацыя на маркетплейсе, прадажа канцэпцыі або самастойны запуск бізнесу па гатовым пакеце</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHOM -->
+<section id="audience" class="feat">
+  <div class="feat-label" data-t="aud_label">для каго</div>
+  <div class="feat-title sr" data-t="aud_title">Для тых, хто стварае<br>і для тых, хто запускае.</div>
+  <div class="feat-desc sr sr-d1" data-t="aud_desc">SVITA аб'ядноўвае людзей з ідэямі і людзей з капіталам.</div>
+  <div class="audience sr sr-d2">
+    <div class="aud-card">
+      <span class="aud-icon">💡</span>
+      <div class="aud-t" data-t="aud_c1_t">Стваральнікі канцэпцый</div>
+      <div class="aud-d" data-t="aud_c1_d">Шэф-повары, дызайнеры, рэстаратары — тыя, хто мае вопыт і бачанне, але хоча зарабіць на ідэі без уласнага заведзення.</div>
+      <ul class="aud-list">
+        <li data-t="aud_c1_l1">Манетызацыя экспертызы</li>
+        <li data-t="aud_c1_l2">Пасіўны даход ад продажу</li>
+        <li data-t="aud_c1_l3">Партфоліа канцэпцый</li>
+      </ul>
+    </div>
+    <div class="aud-card">
+      <span class="aud-icon">🏗</span>
+      <div class="aud-t" data-t="aud_c2_t">Прадпрымальнікі</div>
+      <div class="aud-d" data-t="aud_c2_d">Хочаце адкрыць заведзенне, але не маеце досведу ў індустрыі? Купіце правераную канцэпцыю і запусціце бізнес пад ключ.</div>
+      <ul class="aud-list">
+        <li data-t="aud_c2_l1">Зніжэнне рызыкі запуску</li>
+        <li data-t="aud_c2_l2">Гатовыя дакументы</li>
+        <li data-t="aud_c2_l3">Хуткі старт</li>
+      </ul>
+    </div>
+    <div class="aud-card">
+      <span class="aud-icon">📈</span>
+      <div class="aud-t" data-t="aud_c3_t">Інвестары і сеткі</div>
+      <div class="aud-d" data-t="aud_c3_d">Ацэньвайце бізнес-канцэпцыі па фінансавых мадэлях, абірайце лепшыя і масштабуйце як сетку.</div>
+      <ul class="aud-list">
+        <li data-t="aud_c3_l1">Параўнанне канцэпцый</li>
+        <li data-t="aud_c3_l2">Гатовыя фін. мадэлі</li>
+        <li data-t="aud_c3_l3">White-label рашэнне</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="feat" style="background:var(--bk2)">
+  <div class="feat-label" data-t="price_label">кошт</div>
+  <div class="feat-title sr" data-t="price_title">Просты кошт.<br>Без схаваных умоў.</div>
+  <div class="feat-desc sr sr-d1" data-t="price_desc">Выберыце план, які адпавядае вашым мэтам.</div>
+  <div class="pricing sr sr-d2">
+    <div class="price-card">
+      <div class="price-name" data-t="price_p1_name">Starter</div>
+      <div class="price-desc" data-t="price_p1_desc">Для першай канцэпцыі</div>
+      <div class="price-val">$0</div>
+      <div class="price-period" data-t="price_p1_period">назаўжды бясплатна</div>
+      <ul class="price-list">
+        <li data-t="price_p1_l1">1 канцэпцыя</li>
+        <li data-t="price_p1_l2">Базавы канструктар</li>
+        <li data-t="price_p1_l3">Экспарт у PDF</li>
+        <li data-t="price_p1_l4">Суполка SVITA</li>
+      </ul>
+      <a href="#cta" class="price-btn price-btn-line" data-t="price_p1_btn">Пачаць</a>
+    </div>
+    <div class="price-card featured">
+      <div class="price-badge" data-t="price_p2_badge">папулярны</div>
+      <div class="price-name" data-t="price_p2_name">Pro</div>
+      <div class="price-desc" data-t="price_p2_desc">Для сур'ёзных стваральнікаў</div>
+      <div class="price-val">$49</div>
+      <div class="price-period" data-t="price_p2_period">у месяц</div>
+      <ul class="price-list">
+        <li data-t="price_p2_l1">Неабмежаваныя канцэпцыі</li>
+        <li data-t="price_p2_l2">AI-асістэнт</li>
+        <li data-t="price_p2_l3">Маркетплейс публікацыя</li>
+        <li data-t="price_p2_l4">Брэнд-бук генератар</li>
+        <li data-t="price_p2_l5">Бізнес-план калькулятар</li>
+      </ul>
+      <a href="#cta" class="price-btn price-btn-fill" data-t="price_p2_btn">Выбраць Pro</a>
+    </div>
+    <div class="price-card">
+      <div class="price-name" data-t="price_p3_name">Enterprise</div>
+      <div class="price-desc" data-t="price_p3_desc">Для сетак і інвестараў</div>
+      <div class="price-val">Custom</div>
+      <div class="price-period" data-t="price_p3_period">індывідуальна</div>
+      <ul class="price-list">
+        <li data-t="price_p3_l1">Усё з Pro</li>
+        <li data-t="price_p3_l2">White-label рашэнне</li>
+        <li data-t="price_p3_l3">API доступ</li>
+        <li data-t="price_p3_l4">Персанальны менеджар</li>
+        <li data-t="price_p3_l5">Прыярытэтная падтрымка</li>
+      </ul>
+      <a href="#cta" class="price-btn price-btn-line" data-t="price_p3_btn">Звязацца</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="feat">
+  <div class="feat-label" data-t="faq_label">пытанні</div>
+  <div class="feat-title sr" data-t="faq_title">Частыя пытанні</div>
+  <div class="faq sr sr-d1">
+    <div class="faq-item">
+      <div class="faq-q" data-t="faq_q1">Чым SVITA адрозніваецца ад франшызы?</div>
+      <div class="faq-a" data-t="faq_a1">Франшыза — гэта гатовы бізнес з абавязковымі правіламі і раялці. SVITA — гэта канструктар, дзе вы купляеце канцэпцыю і запускаеце яе пад сваім імем, без абмежаванняў і штомесячных плацяжоў уладальніку.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" data-t="faq_q2">Мне патрэбен досвед у рэстараннай індустрыі?</div>
+      <div class="faq-a" data-t="faq_a2">Не. Кожная канцэпцыя ўключае падрабязныя інструкцыі, тэхкарты, стандарты абслугоўвання і маркетынг-план. Вы атрымліваеце ўсё, каб запусціць бізнес без папярэдняга досведу.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" data-t="faq_q3">Як я магу зарабіць на стварэнні канцэпцый?</div>
+      <div class="faq-a" data-t="faq_a3">Апублікуйце сваю канцэпцыю на маркетплейсе SVITA. Кожны продаж прыносіць вам даход. Лепшыя стваральнікі зарабляюць на пасіўным дахоце, калі іх канцэпцыі запускаюцца ў розных гарадах і краінах.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" data-t="faq_q4">Якія тыпы заведзенняў можна стварыць?</div>
+      <div class="faq-a" data-t="faq_a4">Любыя: кавярні, рэстараны, бары, фаст-фуд, пекарні, барбершопы, фітнес-студыі, стаматалогіі, ветклінікі — і гэта толькі пачатак. Калі гэта заведзенне з паўтараемым фарматам — яно для SVITA.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" data-t="faq_q5">Ці ёсць абмежаванне па геаграфіі?</div>
+      <div class="faq-a" data-t="faq_a5">Не. SVITA працуе глабальна. Канцэпцыі можна адаптаваць пад любы рынак — мясцовыя пастаўшчыкі, валюта і нарматывы ўлічваюцца пры генерацыі дакументаў.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" data-t="faq_q6">Як працуе AI-асістэнт?</div>
+      <div class="faq-a" data-t="faq_a6">AI дапамагае на кожным этапе: прапануе структуру меню, разлічвае сабекошт, генеруе тэксты для брэнд-бука, стварае фінансавыя мадэлі і правярае паўнату канцэпцыі перад публікацыяй.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-title sr" data-t="cta_title">Гатовы стварыць?</div>
+  <div class="cta-desc sr sr-d1" data-t="cta_desc">Першая канцэпцыя — бясплатна. Пачніце прама зараз і ўбачце, як лёгка ператварыць ідэю ў гатовы бізнес-пакет.</div>
+  <div class="hero-cta-row sr sr-d2">
+    <a href="mailto:hello@labs67.com" class="btn-primary" data-t="cta_btn">Пачаць бясплатна</a>
+    <a href="https://labs67.com" class="btn-ghost" data-t="cta_about">Пра LABS67</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-left">&copy; 2026 SVITA &middot; LABS67</div>
+  <div class="foot-links">
+    <a href="https://labs67.com">LABS67</a>
+    <a href="https://svyatlitsa.com">Svyatlitsa</a>
+    <a href="https://scyra.labs67.com">SCYRA.AI</a>
+    <a href="https://academi67.com">SLYAH.AI</a>
+    <a href="https://trade.labs67.com">MREZA.AI</a>
+    <a href="mailto:hello@labs67.com" data-t="foot_contact">Кантакт</a>
+  </div>
+</footer>
+
+<!-- PULSE NAV -->
+<aside class="pulse-nav" id="pulseNav">
+  <a class="pn-item" href="https://labs67.com" target="_blank"><span class="pn-dot" style="background:#B8860B"></span><span class="pn-label">labs67</span></a>
+  <a class="pn-item" href="https://svyatlitsa.com" target="_blank"><span class="pn-dot" style="background:#C49A2D"></span><span class="pn-label">svyatlitsa</span></a>
+  <div class="pn-divider"></div>
+  <a class="pn-item" href="https://scyra.labs67.com" target="_blank"><span class="pn-dot" style="background:#7F77DD"></span><span class="pn-label">scyra.ai</span></a>
+  <div class="pn-divider"></div>
+  <a class="pn-item" href="https://academi67.com" target="_blank"><span class="pn-dot" style="background:#2B7ACC"></span><span class="pn-label">slyah.ai</span></a>
+  <a class="pn-item" href="https://trade.labs67.com" target="_blank"><span class="pn-dot" style="background:#0891B2"></span><span class="pn-label">mreza.ai</span></a>
+  <a class="pn-item" href="https://franchise.labs67.com"><span class="pn-dot active" style="background:#BA7517"></span><span class="pn-label">svita.ai</span></a>
+  <div class="pn-pulse"></div>
+  <button class="pn-action" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Top">↑</button>
+</aside>
+
+<!-- SCRIPTS -->
 <script>
 (function(){
-  var SB='https://ctdleobjnzniqkqomlrq.supabase.co';
-  var SK='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN0ZGxlb2JqbnpuaXFrcW9tbHJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIyMzE4MTEsImV4cCI6MjA4NzgwNzgxMX0.AMHtY7zGPemKYCxMy2bqRTOEAp8trA_Slor9wmg7C38';
+  /* Scroll reveal */
+  var els=document.querySelectorAll('.sr');
+  var ob=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');ob.unobserve(e.target)}});
+  },{threshold:0.15,rootMargin:'0px 0px -60px 0px'});
+  els.forEach(function(el){ob.observe(el)});
 
-  var hero=document.getElementById('hero');
-  var canvas=document.getElementById('canvas');
-  var bar=document.getElementById('bar');
-  var qi=document.getElementById('qi');
-  var shareEl=document.getElementById('share');
-  var loaded=[]; var cache={}; var sid=Math.random().toString(36).substr(2,8); var L='ru';
+  /* Surf drag scroll */
+  var track=document.getElementById('surfTrack');
+  var isDown=false,startX,scrollL;
+  track.addEventListener('mousedown',function(e){isDown=true;startX=e.pageX-track.offsetLeft;scrollL=track.scrollLeft});
+  track.addEventListener('mouseleave',function(){isDown=false});
+  track.addEventListener('mouseup',function(){isDown=false});
+  track.addEventListener('mousemove',function(e){
+    if(!isDown)return;e.preventDefault();
+    var x=e.pageX-track.offsetLeft;
+    track.scrollLeft=scrollL-(x-startX)*1.5;
+  });
 
-  /* Agent personality — responses by category */
-  var agentIntros={
-    formats:'Вот <strong>три формата</strong> партнёрства с LABS67. Каждый — это полностью готовая модель запуска AI-клиники.',
-    prices:'Стоимость зависит от формата. Вот <strong>фиксированные условия</strong> — они не меняются.',
-    conditions:'Вот <strong>ключевые условия</strong> партнёрства. Всё прозрачно — никаких скрытых пунктов.',
-    tech:'Технологии — это то, что отличает нас от обычной франшизы. Вот <strong>что стоит внутри каждой клиники</strong>.',
-    packages:'Полный <strong>комплект оборудования</strong> для запуска клиники.',
-    process:'<strong>Пять шагов</strong> от заявки до открытия. Мы ведём на каждом этапе.',
-    team:'За каждой клиникой стоит <strong>команда поддержки</strong> концерна.',
-    faq:'Вот ответы на <strong>самые частые вопросы</strong>. Если вашего нет — напишите, я запомню.',
-    contacts:'Вот как <strong>связаться</strong> с нами напрямую.'
-  };
-
-  var agentFollowups={
-    formats:['сколько стоит','условия контракта','как начать'],
-    prices:['условия контракта','оборудование','как начать'],
-    conditions:['форматы франшизы','технологии AI','контакты'],
-    tech:['оборудование клиники','форматы','цены'],
-    packages:['технологии AI','цены','как начать'],
-    process:['форматы','цены','контакты'],
-    team:['процесс открытия','технологии','контакты'],
-    faq:['форматы','цены','контакты'],
-    contacts:['форматы','цены','процесс']
-  };
-
-  function api(t,p){return fetch(SB+'/rest/v1/'+t+'?'+p,{headers:{'apikey':SK,'Authorization':'Bearer '+SK,'Content-Type':'application/json'}}).then(function(r){return r.json()})}
-  function apiPost(t,d){fetch(SB+'/rest/v1/'+t,{method:'POST',headers:{'apikey':SK,'Authorization':'Bearer '+SK,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify(d)})}
-  function esc(s){if(!s)return'';var d=document.createElement('div');d.textContent=s;return d.innerHTML}
-  function tx(o){return o[L]||o.en||o.be||''}
-
-  /* ── SEARCH ── */
-  function search(q){
-    var w=q.toLowerCase().replace(/[^\wа-яёіўґє\s]/gi,'').split(/\s+/).filter(function(x){return x.length>1});
-    if(!w.length) return Promise.resolve([]);
-    var or=w.map(function(x){return 'keyword.ilike.*'+encodeURIComponent(x)+'*'}).join(',');
-    return api('franchise_keywords','select=block_id,weight&or=('+or+')')
-      .then(function(kws){
-        if(!kws||!kws.length) return [];
-        var sc={};kws.forEach(function(k){sc[k.block_id]=(sc[k.block_id]||0)+k.weight});
-        var ids=Object.keys(sc).sort(function(a,b){return sc[b]-sc[a]}).slice(0,6);
-        var f=ids.map(function(id){return 'id.eq.'+id}).join(',');
-        return api('franchise_blocks','select=*&or=('+f+')&is_active=eq.true&order=category,sort_order');
-      });
-  }
-
-  /* ── RENDER CARD ── */
-  function renderCard(b){
-    var m=b.meta||{};var h='<div class="card">';
-    if(m.badge) h+='<div class="card-badge">'+esc(m.badge)+'</div>';
-    h+='<div class="card-title">'+esc(tx(b.title))+'</div>';
-    h+='<div class="card-text">'+esc(tx(b.content))+'</div>';
-    if(m.price_from){
-      h+='<div class="card-price">'+esc(m.price_from);
-      if(m.price_to&&m.price_to!=='negotiable') h+=' — '+esc(m.price_to);
-      h+='</div>';
-      if(m.price_to==='negotiable') h+='<div class="card-price-sub">Индивидуальные условия</div>';
-      if(m.royalty) h+='<div class="card-royalty">Роялти: '+esc(m.royalty)+'</div>';
-      if(m.includes_note) h+='<div class="card-price-sub">'+esc(m.includes_note)+'</div>';
-    }
-    ['includes','items','specs','roles','points'].forEach(function(k){
-      if(m[k]){h+='<ul class="card-list">';m[k].forEach(function(i){h+='<li>'+esc(i)+'</li>'});h+='</ul>'}
+  /* FAQ accordion */
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click',function(){
+      var item=this.parentElement;
+      var wasOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open')});
+      if(!wasOpen) item.classList.add('open');
     });
-    if(m.steps) m.steps.forEach(function(s){
-      h+='<div class="card-step"><div class="card-step-n">'+esc(s.num)+'</div><div><div class="card-step-t">'+esc(s.title)+'</div><div class="card-step-d">'+esc(s.desc)+'</div></div></div>';
+  });
+
+  /* Smooth nav links */
+  document.querySelectorAll('nav a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var t=document.querySelector(this.getAttribute('href'));
+      if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}
     });
-    if(m.questions) m.questions.forEach(function(q){
-      h+='<div class="card-faq-q">'+esc(q.q)+'</div><div class="card-faq-a">'+esc(q.a)+'</div>';
-    });
-    if(m.phone){
-      h+='<div class="card-contact"><span>&#128222;</span><a href="tel:'+esc(m.phone)+'">'+esc(m.phone)+'</a></div>';
-      h+='<div class="card-contact"><span>&#9993;</span><a href="mailto:'+esc(m.email)+'">'+esc(m.email)+'</a></div>';
-      if(m.telegram) h+='<div class="card-contact"><span>&#9992;</span><a href="https://t.me/'+esc(m.telegram.replace('@',''))+'">'+esc(m.telegram)+'</a></div>';
-    }
-    return h+'</div>';
-  }
-
-  /* ── CREATE FRAME ── */
-  function createFrame(query, blocks, isShared){
-    var fresh=blocks.filter(function(b){return loaded.indexOf(b.slug)===-1});
-    if(!fresh.length&&!isShared) return;
-
-    // Activate canvas
-    hero.classList.add('off');
-    canvas.classList.add('on');
-    bar.classList.remove('hero-mode');
-
-    var frame=document.createElement('div');
-    frame.className='frame';
-    var html='';
-
-    // Query echo
-    if(query&&query!=='shared'){
-      html+='<div class="frame-q">'+esc(query)+'</div>';
-    }
-
-    // Group by category
-    var groups={};var order=[];
-    fresh.forEach(function(b){
-      if(!groups[b.category]){groups[b.category]=[];order.push(b.category)}
-      groups[b.category].push(b);
-      loaded.push(b.slug);cache[b.slug]=b;
-    });
-
-    // Agent intro message (based on primary category)
-    var mainCat=order[0]||'formats';
-    if(!isShared&&agentIntros[mainCat]){
-      html+='<div class="agent-msg">'+agentIntros[mainCat]+'</div>';
-    }
-
-    // Render block grids
-    order.forEach(function(cat){
-      var items=groups[cat];
-      var cols=items.length>=3?'g3':items.length===2?'g2':'g1';
-      html+='<div class="grid '+cols+'">';
-      items.forEach(function(b){html+=renderCard(b)});
-      html+='</div>';
-    });
-
-    // Follow-up suggestions
-    if(!isShared&&agentFollowups[mainCat]){
-      html+='<div class="sugs" style="margin-top:16px;justify-content:flex-start">';
-      agentFollowups[mainCat].forEach(function(s){
-        html+='<button class="sg" data-q="'+esc(s)+'">'+esc(s)+'</button>';
-      });
-      html+='</div>';
-    }
-
-    frame.innerHTML=html;
-    canvas.appendChild(frame);
-
-    // Bind follow-up clicks
-    frame.querySelectorAll('.sg').forEach(function(btn){
-      btn.onclick=function(){send(btn.getAttribute('data-q'))};
-    });
-
-    updateShare();
-    updateHash();
-
-    setTimeout(function(){
-      frame.scrollIntoView({behavior:'smooth',block:'start'});
-    },50);
-  }
-
-  /* ── UNANSWERED FRAME ── */
-  function createUnansweredFrame(query){
-    hero.classList.add('off');
-    canvas.classList.add('on');
-    bar.classList.remove('hero-mode');
-
-    var frame=document.createElement('div');
-    frame.className='frame';
-    frame.innerHTML='<div class="frame-q">'+esc(query)+'</div>'+
-      '<div class="agent-msg">Хм, я пока <strong>не знаю точного ответа</strong> на этот вопрос. '+
-      'Я записал его — команда LABS67 разберётся и добавит информацию. '+
-      'Пока могу помочь с тем, что знаю:</div>'+
-      '<div class="sugs" style="justify-content:flex-start">'+
-      '<button class="sg" data-q="форматы франшизы">форматы</button>'+
-      '<button class="sg" data-q="сколько стоит">цены</button>'+
-      '<button class="sg" data-q="условия">условия</button>'+
-      '<button class="sg" data-q="технологии">технологии</button>'+
-      '<button class="sg" data-q="контакты">контакты</button>'+
-      '</div>';
-    canvas.appendChild(frame);
-    frame.querySelectorAll('.sg').forEach(function(btn){
-      btn.onclick=function(){send(btn.getAttribute('data-q'))};
-    });
-    apiPost('franchise_unanswered',{question:query,matched_count:0,session_id:sid});
-    setTimeout(function(){frame.scrollIntoView({behavior:'smooth',block:'start'})},50);
-  }
-
-  /* ── THINKING INDICATOR ── */
-  function showThinking(){
-    var t=document.createElement('div');
-    t.className='frame';t.id='thinking';
-    t.innerHTML='<div class="thinking"><span></span><span></span><span></span></div>';
-    canvas.appendChild(t);
-    canvas.classList.add('on');
-  }
-  function hideThinking(){var t=document.getElementById('thinking');if(t)t.remove()}
-
-  /* ── SEND ── */
-  function send(q){
-    q=(q||'').trim();if(!q) return;
-    qi.value='';qi.focus();
-
-    hero.classList.add('off');
-    bar.classList.remove('hero-mode');
-    showThinking();
-
-    search(q).then(function(blocks){
-      hideThinking();
-      if(blocks&&blocks.length){
-        createFrame(q,blocks,false);
-      } else {
-        createUnansweredFrame(q);
-      }
-    }).catch(function(){
-      hideThinking();
-      createUnansweredFrame(q);
-    });
-  }
-
-  /* ── SHARE / HASH ── */
-  function updateShare(){
-    var n=loaded.length;
-    if(!n) return;
-    document.getElementById('sc').textContent=n+' блок'+(n===1?'':n<5?'а':'ов');
-    shareEl.classList.add('on');
-  }
-  function updateHash(){if(loaded.length) window.location.hash=loaded.join(',')}
-  window.doShare=function(){
-    var u=location.origin+location.pathname+'#'+loaded.join(',');
-    navigator.clipboard.writeText(u).then(function(){
-      var b=shareEl.querySelector('button');b.textContent='✓ скопировано';
-      setTimeout(function(){b.textContent='скопировать ссылку'},2000);
-    });
-  };
-  function loadHash(){
-    var h=window.location.hash.replace('#','');if(!h) return;
-    var slugs=h.split(',').filter(Boolean);if(!slugs.length) return;
-    var f=slugs.map(function(s){return 'slug.eq.'+s}).join(',');
-    api('franchise_blocks','select=*&or=('+f+')&is_active=eq.true').then(function(blocks){
-      if(blocks&&blocks.length){
-        blocks.sort(function(a,b){return slugs.indexOf(a.slug)-slugs.indexOf(b.slug)});
-        createFrame('shared',blocks,true);
-      }
-    });
-  }
-
-  /* ── EVENTS ── */
-  document.getElementById('qgo').onclick=function(){send(qi.value)};
-  qi.onkeydown=function(e){if(e.key==='Enter')send(qi.value)};
-  document.getElementById('sugs').onclick=function(e){
-    var b=e.target.closest('.sg');if(b) send(b.getAttribute('data-q'));
-  };
-
-  loadHash();
+  });
 })();
 </script>
 
-<!-- PULSE NAVIGATOR -->
-<aside class="pulse-nav" id="pulseNav">
-  <a class="pn-item" href="https://labs67.com" target="_blank">
-    <span class="pn-dot" style="background:#B8860B"></span>
-    <span class="pn-label">labs67</span>
-  </a>
-  <a class="pn-item" href="https://svyatlitsa.com" target="_blank">
-    <span class="pn-dot" style="background:#C49A2D"></span>
-    <span class="pn-label">svyatlitsa</span>
-  </a>
-  <div class="pn-divider"></div>
-  <a class="pn-item" href="https://scyra.labs67.com" target="_blank">
-    <span class="pn-dot" style="background:#7F77DD"></span>
-    <span class="pn-label">scyra.ai</span>
-  </a>
-  <div class="pn-divider"></div>
-  <a class="pn-item" href="https://academi67.com" target="_blank">
-    <span class="pn-dot" style="background:#2B7ACC"></span>
-    <span class="pn-label">slyah.ai</span>
-  </a>
-  <a class="pn-item" href="https://trade.labs67.com" target="_blank">
-    <span class="pn-dot" style="background:#0891B2"></span>
-    <span class="pn-label">mreza.ai</span>
-  </a>
-  <a class="pn-item" href="https://franchise.labs67.com">
-    <span class="pn-dot active" style="background:#BA7517"></span>
-    <span class="pn-label">ladza.ai</span>
-  </a>
-  <div class="pn-pulse"></div>
-  <button class="pn-action" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Top">&#8593;</button>
-</aside>
-
-<script>
-// Static UI translations for labs67-i18n.js
-window.I18N = {
-  brand_sub: {
-    be:'канцэрн labs67', de:'Konzern labs67', en:'concern labs67', es:'grupo labs67', fr:'groupe labs67',
-    it:'gruppo labs67', ja:'コンツェルン labs67', ko:'콘체른 labs67', pl:'koncern labs67', pt:'grupo labs67', ru:'концерн labs67', uk:'концерн labs67'
-  },
-  brand_desc: {
-    be:'Франшыза AI-клінік. Задайце пытанне — сайт збярэцца пад вас.',
-    de:'KI-Klinik-Franchise. Stellen Sie eine Frage — die Seite baut sich für Sie.',
-    en:'AI dental clinic franchise. Ask a question — the site assembles for you.',
-    es:'Franquicia de clínicas IA. Haz una pregunta — el sitio se construye para ti.',
-    fr:'Franchise de cliniques IA. Posez une question — le site se construit pour vous.',
-    it:'Franchising di cliniche AI. Fai una domanda — il sito si costruisce per te.',
-    ja:'AI歯科クリニックフランチャイズ。質問すると、サイトがあなたのために構築されます。',
-    ko:'AI 치과 클리닉 프랜차이즈. 질문하세요 — 사이트가 당신을 위해 구성됩니다.',
-    pl:'Franczyza klinik AI. Zadaj pytanie — strona złoży się dla Ciebie.',
-    pt:'Franquia de clínicas IA. Faça uma pergunta — o site se monta para você.',
-    ru:'Франшиза AI-клиник. Задайте вопрос — сайт соберётся под вас.',
-    uk:'Франшиза AI-клінік. Задайте питання — сайт збереться під вас.'
-  },
-  chat_label: {
-    be:'задай пытанне — сайт з\'явіцца', de:'stellen Sie eine Frage — die Seite erscheint', en:'ask a question — the site appears',
-    es:'haz una pregunta — el sitio aparecerá', fr:'posez une question — le site apparaîtra', it:'fai una domanda — il sito apparirà',
-    ja:'質問すると、サイトが表示されます', ko:'질문하세요 — 사이트가 나타납니다', pl:'zadaj pytanie — strona się pojawi',
-    pt:'faça uma pergunta — o site aparecerá', ru:'задай вопрос — сайт появится', uk:'задай питання — сайт з\'явиться'
-  }
-};
-</script>
+<!-- I18N -->
+<div class="lang-switcher"></div>
+<script src="lang.js"></script>
 <script src="labs67-i18n.js"></script>
 </body></html>
