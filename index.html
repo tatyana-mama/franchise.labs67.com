@@ -200,7 +200,7 @@ footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.04);display:fle
 }
 
 /* ═══ LANG SWITCHER ═══ */
-.lang-switcher{position:fixed;top:48px;right:0;left:0;z-index:99;display:flex;justify-content:flex-end;padding:8px 48px}
+.lang-switcher{position:relative;display:flex;}
 .labs67-lang{position:relative}
 .lang-current{font-family:var(--fm);font-size:10px;letter-spacing:1px;padding:8px 14px;background:rgba(10,10,15,0.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.4);cursor:pointer;display:flex;align-items:center;gap:6px;border-radius:20px;transition:all 0.2s}
 .lang-current:hover{border-color:rgba(186,117,23,0.3);color:var(--gold)}
@@ -230,6 +230,8 @@ footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.04);display:fle
     <a href="#how" data-t="nav_how">Працэс</a>
     <a href="#pricing" data-t="nav_pricing">Кошт</a>
     <a href="#cta" class="nav-cta" data-t="nav_start">Пачаць</a>
+    <a href="https://labs67.com" class="nav-back" style="font-size:10px;letter-spacing:2px;color:rgba(255,255,255,.4);text-decoration:none;margin-left:12px;white-space:nowrap;">← LABS67</a>
+    <div class="lang-switcher" style="margin-left:8px;"></div>
   </div>
 </nav>
 
@@ -602,7 +604,6 @@ footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.04);display:fle
 </script>
 
 <!-- I18N -->
-<div class="lang-switcher"></div>
 <script src="lang.js"></script>
 <script src="labs67-i18n.js"></script>
 </body></html>
