@@ -18,7 +18,7 @@
   --wh:#fff;--dim:rgba(255,255,255,0.4);
   --fd:'Sora',sans-serif;--fb:'Inter',sans-serif;--fm:'JetBrains Mono',monospace;
 }
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
 body{font-family:var(--fb);background:var(--bk);color:var(--wh);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 ::selection{background:rgba(186,117,23,0.3);color:var(--wh)}
 
@@ -177,7 +177,7 @@ footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.04);display:fle
 /* ═══ RESPONSIVE ═══ */
 @media(max-width:900px){
   nav{padding:0 24px}
-  .nav-links a:not(.nav-cta){display:none}
+  .nav-links{display:none}
   section{padding:100px 24px}
   #announce{padding:60px 24px}
   .cards-3{grid-template-columns:1fr}
